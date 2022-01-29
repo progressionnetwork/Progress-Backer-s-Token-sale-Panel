@@ -1,0 +1,2770 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carbon - Admin Template</title>
+    <link rel="stylesheet" href="./vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="./vendor/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+
+<style>
+
+    .sprice {
+        font-family: "Montserrat", sans-serif;
+        width: 290px;
+        text-align: center;
+        display: inline-block;
+        vertical-align: top;
+        background-color: #fff;
+        min-height: 100px;
+        margin: 0 4px;
+        margin-right: 25px;
+        border: 1px #dee2e6 solid;
+    }
+    .sprice-title {
+        padding-top: 15px;
+        padding-bottom: 13px;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 16px;
+    }
+    .sprice-circle {
+        height: 70px;
+        margin: 20px 0;
+        border: 0px solid;
+        display: inline-block;
+        border-radius:50%;
+        padding: 4px 30px 5px 35px;
+        transition: all .4s;
+    }
+    .sprice-cat {
+         border-top:1px solid #dedede;
+         font-size: 13px;
+         color: #999a95;
+         background-color: #f9f9f9;
+         padding: 10px 0;
+         color: #000000;
+         font-size: 19px;
+     }
+    .sprice-cat:nth-child(2n) {
+        background-color: #f3f3f3;
+    }
+    .end {
+        border-bottom:1px solid #dedede;
+    }
+    input.sprice-button {
+        cursor: pointer;
+        position: relative;
+        margin: 15px 0;
+        border: none;
+        outline: none;
+        color: #fff;
+        font-size: 14px;
+        padding: 10px 15px 10px 20px;
+        transition: all .1s;
+    }
+    input.sprice-button:active {
+        top:2px;
+        box-shadow:none;
+    }
+    /* grey */
+    .g-grey {
+        background: #646c77;
+        background: linear-gradient(to bottom, #697ee9 0%,#697ee9 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#646c77', endColorstr='#424b54',GradientType=0 );
+    }
+    .s-grey {
+
+        color: #656d7a;
+    }
+    .b-grey {
+        background: #8597ed;
+        background: linear-gradient(to bottom, #697ee9 0%,#697ee9 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#646c77', endColorstr='#424b54',GradientType=0 );
+    }
+    .b-grey:hover {
+        background: linear-gradient(to bottom, #5e71cf 0%,#5e71cf 100%);
+    }
+    /* blue */
+    .g-blue {
+        background: #5d9cec;
+        background: linear-gradient(to bottom, #3475bb 0%,#3475bb 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5d9cec', endColorstr='#4b89dc',GradientType=0 );
+    }
+    .s-blue {
+        color: #5f9ced;
+    }
+    .b-blue {
+        background: #5d9cec;
+        background: linear-gradient(to bottom, #3475bb 0%,#3475bb 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5d9cec', endColorstr='#4b89dc',GradientType=0 );
+    }
+    .b-blue:hover {
+        background: linear-gradient(to bottom, #295c93 0%,#295c93 100%);
+    }
+    /* green */
+    .g-green {
+        background: #48cfae;
+        background: linear-gradient(to bottom, #cac6c6 0%,#cac6c6 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#48cfae', endColorstr='#36bc9b',GradientType=0 );
+    }
+    .s-green {
+        color: #48cdae;
+    }
+    .b-green {
+        background: #48cfae;
+        background: linear-gradient(to bottom, #cac6c6 0%,#cac6c6 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#48cfae', endColorstr='#36bc9b',GradientType=0 );
+    }
+    .b-green:hover {
+        background: linear-gradient(to bottom, #b4b3b3 0%,#b4b3b3 100%);
+    }
+    /* orange */
+    .g-orange {
+        background: #ff8e24;
+        background: linear-gradient(to bottom, #ef9428 0%,#ef9428 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8e24', endColorstr='#ff7b0e',GradientType=0 );
+    }
+    .s-orange {
+        color: #ff8e24;
+    }
+    .b-orange {
+        background: #ff8e24;
+        background: linear-gradient(to bottom, #ef9428 0%,#ef9428 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8e24', endColorstr='#ff7b0e',GradientType=0 );
+    }
+    .b-orange:hover {
+        background: linear-gradient(to bottom, #eb8103 0%,#eb8103 100%);
+    }
+    /********/
+    .cryptoamount {
+        font-family: "Courier New";
+        font-size: 16px;
+        line-height: 16px;
+        margin-right: 12px;
+        background-color: #F7F7F9;
+        border: 1px solid #E1E1E8;
+        white-space: nowrap;
+        padding: 8px 8px 4px 10px;
+        border-radius: 3px;
+        display: inline;
+    }
+    .cryptoline {
+        font-family: "Courier New";
+        font-size: 14px;
+        line-height: 16px;
+        margin-right: 12px;
+        background-color: #F7F7F9;
+        border: 1px solid #E1E1E8;
+        white-space: nowrap;
+        padding: 10px 10px 10px 10px;
+        border-radius: 3px;
+        display: inline;
+    }
+    /******/
+    .boxcontainer {
+        margin-top:0px;
+        margin-bottom:20px;
+        text-align:center;
+        font-size:20px;
+        color: #225075;
+        font-family:"Montserrat",sans-serif;
+    }
+    .effect2
+    {
+        position: relative;
+    }
+    .effect2:before, .effect2:after
+    {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        left: 10px;
+        width: 50%;
+        top: 80%;
+        max-width:300px;
+        background: #777;
+        box-shadow: 0 15px 10px #777;
+        transform: rotate(-3deg);
+    }
+    .effect2:after
+    {
+        transform: rotate(3deg);
+        right: 10px;
+        left: auto;
+    }
+    .box {
+        display:inline-block;
+        color:#fff;
+        background-color:#ffffff;
+
+        border-radius:8px;
+        border: 1px solid #42a5f5;
+        text-align: center;
+        text-shadow: 0 1px rgba(255, 255, 255, 0.3);
+        background: #ffffff;
+        border: 1px solid #dee2e6;
+        border-radius: 3px 3px 2px 2px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+        -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.1);
+        box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    .clock-val {
+        display: block;
+        position: relative;
+        z-index: 1;
+        font-size: 64px;
+        font-weight: bold;
+        color: #4f5258;
+    }
+
+    .clock-val:before, .clock-val:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+    .clock-val:before {
+        z-index: -1;
+        top: -16px;
+        border-radius: 2px 2px 0 0;
+        -webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+
+    }
+
+    .clock-val:after {
+        top: 50%;
+        bottom: -16px;
+        border-radius: 0 0 2px 2px;
+        background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0) 50%);
+        background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0) 50%);
+        background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0) 50%);
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0) 50%);
+
+    }
+    .days {
+        padding:10px;
+        border-radius:8px;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+    .hours {
+        padding: 10px;
+        border-radius:8px;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+    .minutes {
+        padding: 10px;
+        border-radius:8px;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+    .seconds {
+        padding: 10px;
+        border-radius:8px;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+    .textbox {
+        font-size:15px;
+        color: #225075;
+    }
+</style>
+
+<script>
+    countdown();
+    function countdown() {
+        var countDownDate = new Date(Date.parse(new Date()) + 30 * 24 * 60 * 60 * 1000).getTime();
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var timer = setInterval(function() {
+            distance -=1000;
+            var days = Math.floor(distance/(1000*60*60*24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor(distance  /1000 % 60 );
+
+            $('.days').html(days);
+            $('.hours').html(('0' + hours).slice(-2));
+            $('.minutes').html(('0' + minutes).slice(-2));
+            $('.seconds').html(('0' + seconds).slice(-2));
+            if (distance < 0) {
+                clearInterval(timer);
+            }
+        }, 1000);
+    }
+/******************/
+    function copyToClipboard(element) {
+        var copyText =document.querySelector(element).select();
+        document.execCommand('copy');
+        alert("Address "+ copyText.value +" was copied to clipboard.");
+    }
+</script>
+
+<body class="sidebar-fixed header-fixed">
+<div class="page-wrapper">
+    <nav class="navbar page-header">
+        <a href="#" class="btn btn-link sidebar-mobile-toggle d-md-none mr-auto">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <a class="navbar-brand" href="#">
+            <img src="./imgs/logo.png" alt="logo">
+        </a>
+
+        <a href="#" class="btn btn-link sidebar-toggle d-md-down-none">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <ul class="navbar-nav ml-auto">
+
+
+
+
+            <li class="nav-item d-md-down-none">
+                <a href="#">
+                    <button class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-4">KYC\AML Form</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
+            </li>
+
+            <li class="nav-item d-md-down-none">
+                <a href="#">
+                    <button type="button" data-toggle="modal" data-target="#modal-2" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> &nbsp; Buy tokens </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
+            </li>
+
+            <li class="nav-item d-md-down-none">
+                <a href="#">
+                    <i class="fa fa-bell"></i>
+                    <span class="badge badge-pill badge-danger">5</span>
+                </a>
+            </li>
+
+            <li class="nav-item d-md-down-none">
+                <a href="#">
+                    <i class="fa fa-envelope-open"></i>
+                    <span class="badge badge-pill badge-danger">5</span>
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="./imgs/avatar-1.png" class="avatar avatar-sm" alt="logo">
+                    <span class="small ml-1 d-md-down-none">Username</span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-header">Account</div>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-user"></i> Profile
+                    </a>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-envelope"></i> Messages
+                    </a>
+
+                    <div class="dropdown-header">Settings</div>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-bell"></i> Notifications
+                    </a>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-wrench"></i> Settings
+                    </a>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-lock"></i> Logout
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">Navigation</li>
+
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fa fa-search"></i> Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="history.html" class="nav-link">
+                            <i class="fa fa-history"></i> History
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fa fa-cogs"></i> Settings
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="history.html" class="nav-link">
+                            <i class="fa fa-lock"></i> Logout
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+
+        <div class="modal fade" id="modal-4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document" style="margin-top: 200px;">
+                <div class="modal-content bg-info">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title text-white">KYL\AML Notice</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body text-white p-5">
+                         You should provide information for <a href="https://en.wikipedia.org/wiki/Know_your_customer">KYC</a>/<a href="https://en.wikipedia.org/wiki/Money_laundering#Anti-money_laundering">AML</a> before you'll be able to participate in tokensale.<br>
+                    </div>
+
+                    <div class="modal-footer border-0">
+                        <a href="settings.html" class="nav-link active"><button type="button" class="btn btn-info">Fill KYC\AML Form</button></a>
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Cancel & logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!---ETH---->
+        <div class="modal fade" id="modal-eth" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document" style="margin-top: 200px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="./imgs/eth.png" height="30" width="30"  style="padding-top: -15px;" alt="eth"><h5 class="modal-title">&nbsp;&nbsp;<strong>Buy PRU tokens via ETH</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="col-md-12 mb-4">
+
+                            <div class="alert alert-dismissible alert-primary">
+                                <div style="font-size: 14px;">
+                                    To participate in the token offering, you should simply send ETH to the offering address<br>
+                                </div>
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-8">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Amount to send:<br>
+                                            <div class="row">
+                                                &nbsp;&nbsp;&nbsp;
+                                                <div class="cryptoamount">
+                                                    1   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                                </div><span style="padding-top: 5px;">ETH</span>
+                                            </div><br>
+                                        </div>
+
+                                        <div class="col-md-6" style="color:#6d6d6d;">
+                                            You will recieve:<br>
+                                            <div class="row">
+                                                &nbsp;&nbsp;&nbsp;
+                                                <strong style="color:#179726;">19,900&nbsp;</strong> <b>PRU&nbsp;</b> tokens
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    Transaction fee:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <div class="cryptoamount">
+                                            0.00943   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                        </div><span style="padding-top: 5px;">ETH</span>
+                                    </div><br>
+
+                                    Your personal deposit address:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;<div class="cryptoline">
+                                        <div id="btc_wallet">0x215c368d3adc4af81e60b26907d8a0fdea5bbafc</div>
+                                    </div>
+                                        <button type="button" onclick="copyToClipboard('btc_wallet')" class="btn btn-primary btn-sm">Copy address</button>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    Your deposit address in QR:<br>
+                                    <div id="bitcoin_qr" title="Scan the QR">
+                                        <img src="https://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=|1&chl=http%3A%2F%2Fwww.renanpupin.com">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br>
+                            <div class="alert alert-dismissible alert-secondary"  style="font-size:12px;">
+                                • Please do not send transactions directly from any exchangers like Poloniex or Coinbase!<br>
+                                • If you have already sent ETH to the address above, please wait <span class="nowrap">1-2 min</span> to receive them by it's blockchain.<br>
+                                • Deposit will be creadited after 1 network confirmation.<br>
+                                • Minimum deposit is 1 ETH.<br>
+                                • To check transaction status your can use http://etherscan.io website.<br>
+                                • Your wallet must support ERC-20 to recieve PRU tokens. (We recommend MyEtherWallet or MetaMask).
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="progress" style="height: 2px">
+                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="col-md-2 mb-4">
+                        <i class="fa fa-clock"></i> 15:00
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <!---ETH---->
+
+
+        <!---BTC-invoice-is-ok---->
+        <div class="modal fade" id="modal-btc-invoice-is-ok" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document" style="margin-top: 200px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="./imgs/btc.png" height="30" width="30"  style="padding-top: -15px;" alt="btc"><h5 class="modal-title">&nbsp;&nbsp;<strong>Buy PRU tokens via BTC</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="col-md-12 mb-4">
+
+                            <div class="alert alert-dismissible alert-success">
+                                <div style="font-size: 14px;">
+                                    <i class="fa fa-check"></i> This invoice has been paid successfully.<br>
+                                </div>
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-8">
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            Recieved:<br>
+                                            <div class="row">
+                                                &nbsp;&nbsp;&nbsp;
+                                                <div class="cryptoamount">
+                                                    1   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                                </div><span style="padding-top: 5px;">BTC</span>
+                                            </div><br>
+                                        </div>
+                                    </div>
+
+                                    Tokens credited:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <div class="cryptoamount">
+                                            149,900   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                        </div><span style="padding-top: 5px;">PRU</span>
+                                    </div><br>
+
+                                    Deposited address:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;<div class="cryptoline">
+                                        <div id="btc_wallet">1C29gpF5MkEPrECiGtkVXwWdAmNiQ4PBMH</div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div id="bitcoin_qr" title="Scan the QR">
+                                        <img src="./imgs/ok.png" alt="ok">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            Transaction:<br>
+                            <a style="color:#54a7db;" href="https://blockchain.info/ru/tx/94cf324b68bf4d8dcb6f0cd636f46844dd85c522ac6227291510dd078c2ad369">https://blockchain.info/ru/tx/94cf324b68bf4d8dcb6f0cd636f46844dd85c522ac6227291510dd078c2ad369</a>
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---BTC-invoice-is-ok---->
+
+        <!---BTC-invoice-is-fail---->
+        <div class="modal fade" id="modal-btc-is-fail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document" style="margin-top: 200px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="./imgs/btc.png" height="30" width="30"  style="padding-top: -15px;" alt="btc"><h5 class="modal-title">&nbsp;&nbsp;<strong>Buy PRU tokens via BTC</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="col-md-12 mb-4">
+
+                            <div class="alert alert-dismissible alert-danger">
+                                <div style="font-size: 14px;">
+                                    <i class="fa fa-minus-circle"></i> This invoice has been failed.<br>
+                                </div>
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-8">
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            Amount:<br>
+                                            <div class="row">
+                                                &nbsp;&nbsp;&nbsp;
+                                                <div class="cryptoamount">
+                                                    1   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                                </div><span style="padding-top: 5px;">BTC</span>
+                                            </div><br>
+                                        </div>
+                                    </div>
+
+                                    No tokens was credited:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <div class="cryptoamount">
+                                            0   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                        </div><span style="padding-top: 5px;">PRU</span>
+                                    </div><br>
+
+                                    Deposited address:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;<div class="cryptoline">
+                                        <div id="btc_wallet">1C29gpF5MkEPrECiGtkVXwWdAmNiQ4PBMH</div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div id="bitcoin_qr" title="Scan the QR">
+                                        <img src="./imgs/fail.png" alt="ok">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            Transaction:<br>
+                            <span style="color:#de5858;">Not found</span>
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---BTC-invoice-is-fail---->
+
+
+        <!---ETH-invoice-is-ok---->
+        <div class="modal fade" id="modal-eth-invoice-is-ok" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document" style="margin-top: 200px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="./imgs/eth.png" height="30" width="30"  style="padding-top: -15px;" alt="btc"><h5 class="modal-title">&nbsp;&nbsp;<strong>Buy PRU tokens via ETH</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="col-md-12 mb-4">
+
+                            <div class="alert alert-dismissible alert-success">
+                                <div style="font-size: 14px;">
+                                    <i class="fa fa-check"></i> This invoice has been paid successfully.<br>
+                                </div>
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-8">
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            Recieved:<br>
+                                            <div class="row">
+                                                &nbsp;&nbsp;&nbsp;
+                                                <div class="cryptoamount">
+                                                    1   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                                </div><span style="padding-top: 5px;">ETH</span>
+                                            </div><br>
+                                        </div>
+                                    </div>
+
+                                    Tokens credited:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <div class="cryptoamount">
+                                            149,900   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                        </div><span style="padding-top: 5px;">PRU</span>
+                                    </div><br>
+
+                                    Deposited address:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;<div class="cryptoline">
+                                        <div id="btc_wallet">0x215c368d3adc4af81e60b26907d8a0fdea5bbafc</div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div id="bitcoin_qr" title="Scan the QR">
+                                        <img src="./imgs/ok.png" alt="ok">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            Transaction:<br>
+                            <a style="color:#54a7db;" href="https://blockchain.info/ru/tx/94cf324b68bf4d8dcb6f0cd636f46844dd85c522ac6227291510dd078c2ad369">https://blockchain.info/ru/tx/94cf324b68bf4d8dcb6f0cd636f46844dd85c522ac6227291510dd078c2ad369</a>
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---ETH-invoice-is-ok---->
+
+        <!---ETH-invoice-is-fail---->
+        <div class="modal fade" id="modal-eth-is-fail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document" style="margin-top: 200px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="./imgs/eth.png" height="30" width="30"  style="padding-top: -15px;" alt="eth"><h5 class="modal-title">&nbsp;&nbsp;<strong>Buy PRU tokens via ETH</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="col-md-12 mb-4">
+
+                            <div class="alert alert-dismissible alert-danger">
+                                <div style="font-size: 14px;">
+                                    <i class="fa fa-minus-circle"></i> This invoice has been failed.<br>
+                                </div>
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-8">
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            Amount:<br>
+                                            <div class="row">
+                                                &nbsp;&nbsp;&nbsp;
+                                                <div class="cryptoamount">
+                                                    1   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                                </div><span style="padding-top: 5px;">ETH</span>
+                                            </div><br>
+                                        </div>
+                                    </div>
+
+                                    No tokens was credited:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <div class="cryptoamount">
+                                            0   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                        </div><span style="padding-top: 5px;">PRU</span>
+                                    </div><br>
+
+                                    Deposited address:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;<div class="cryptoline">
+                                        <div id="btc_wallet">0x215c368d3adc4af81e60b26907d8a0fdea5bbafc</div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div id="bitcoin_qr" title="Scan the QR">
+                                        <img src="./imgs/fail.png" alt="ok">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            Transaction:<br>
+                            <span style="color:#de5858;">Not found</span>
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---ETH-invoice-is-fail---->
+
+
+
+        <!---dash-invoice-is-ok---->
+        <div class="modal fade" id="modal-dash-invoice-is-ok" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document" style="margin-top: 200px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="./imgs/dash.png" height="30" width="30"  style="padding-top: -15px;" alt="btc"><h5 class="modal-title">&nbsp;&nbsp;<strong>Buy PRU tokens via DASH</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="col-md-12 mb-4">
+
+                            <div class="alert alert-dismissible alert-success">
+                                <div style="font-size: 14px;">
+                                    <i class="fa fa-check"></i> This invoice has been paid successfully.<br>
+                                </div>
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-8">
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            Recieved:<br>
+                                            <div class="row">
+                                                &nbsp;&nbsp;&nbsp;
+                                                <div class="cryptoamount">
+                                                    1   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                                </div><span style="padding-top: 5px;">DASH</span>
+                                            </div><br>
+                                        </div>
+                                    </div>
+
+                                    Tokens credited:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <div class="cryptoamount">
+                                            149,900   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                        </div><span style="padding-top: 5px;">PRU</span>
+                                    </div><br>
+
+                                    Deposited address:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;<div class="cryptoline">
+                                        <div id="btc_wallet">0x215c368d3adc4af81e60b26907d8a0fdea5bbafc</div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div id="bitcoin_qr" title="Scan the QR">
+                                        <img src="./imgs/ok.png" alt="ok">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            Transaction:<br>
+                            <a style="color:#54a7db;" href="https://blockchain.info/ru/tx/94cf324b68bf4d8dcb6f0cd636f46844dd85c522ac6227291510dd078c2ad369">https://blockchain.info/ru/tx/94cf324b68bf4d8dcb6f0cd636f46844dd85c522ac6227291510dd078c2ad369</a>
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---dash-invoice-is-ok---->
+
+        <!---dash-invoice-is-fail---->
+        <div class="modal fade" id="modal-dash-is-fail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document" style="margin-top: 200px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="./imgs/dash.png" height="30" width="30"  style="padding-top: -15px;" alt="dash"><h5 class="modal-title">&nbsp;&nbsp;<strong>Buy PRU tokens via DASH</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="col-md-12 mb-4">
+
+                            <div class="alert alert-dismissible alert-danger">
+                                <div style="font-size: 14px;">
+                                    <i class="fa fa-minus-circle"></i> This invoice has been failed.<br>
+                                </div>
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-8">
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            Amount:<br>
+                                            <div class="row">
+                                                &nbsp;&nbsp;&nbsp;
+                                                <div class="cryptoamount">
+                                                    1   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                                </div><span style="padding-top: 5px;">DASH</span>
+                                            </div><br>
+                                        </div>
+                                    </div>
+
+                                    No tokens was credited:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <div class="cryptoamount">
+                                            0   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                        </div><span style="padding-top: 5px;">PRU</span>
+                                    </div><br>
+
+                                    Deposited address:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;<div class="cryptoline">
+                                        <div id="btc_wallet">0x215c368d3adc4af81e60b26907d8a0fdea5bbafc</div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div id="bitcoin_qr" title="Scan the QR">
+                                        <img src="./imgs/fail.png" alt="ok">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            Transaction:<br>
+                            <span style="color:#de5858;">Not found</span>
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---ETH-invoice-is-fail---->
+
+
+
+
+        <!---ltc-invoice-is-ok---->
+        <div class="modal fade" id="modal-ltc-invoice-is-ok" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document" style="margin-top: 200px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="./imgs/ltc.png" height="30" width="30"  style="padding-top: -15px;" alt="ltc"><h5 class="modal-title">&nbsp;&nbsp;<strong>Buy PRU tokens via LTC</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="col-md-12 mb-4">
+
+                            <div class="alert alert-dismissible alert-success">
+                                <div style="font-size: 14px;">
+                                    <i class="fa fa-check"></i> This invoice has been paid successfully.<br>
+                                </div>
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-8">
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            Recieved:<br>
+                                            <div class="row">
+                                                &nbsp;&nbsp;&nbsp;
+                                                <div class="cryptoamount">
+                                                    1   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                                </div><span style="padding-top: 5px;">ltc</span>
+                                            </div><br>
+                                        </div>
+                                    </div>
+
+                                    Tokens credited:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <div class="cryptoamount">
+                                            149,900   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                        </div><span style="padding-top: 5px;">PRU</span>
+                                    </div><br>
+
+                                    Deposited address:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;<div class="cryptoline">
+                                        <div id="btc_wallet">0x215c368d3adc4af81e60b26907d8a0fdea5bbafc</div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div id="bitcoin_qr" title="Scan the QR">
+                                        <img src="./imgs/ok.png" alt="ok">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            Transaction:<br>
+                            <a style="color:#54a7db;" href="https://blockchain.info/ru/tx/94cf324b68bf4d8dcb6f0cd636f46844dd85c522ac6227291510dd078c2ad369">https://blockchain.info/ru/tx/94cf324b68bf4d8dcb6f0cd636f46844dd85c522ac6227291510dd078c2ad369</a>
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---ltc-invoice-is-ok---->
+
+        <!---ltc-invoice-is-fail---->
+        <div class="modal fade" id="modal-ltc-is-fail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document" style="margin-top: 200px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="./imgs/ltc.png" height="30" width="30"  style="padding-top: -15px;" alt="ltc"><h5 class="modal-title">&nbsp;&nbsp;<strong>Buy PRU tokens via LTC</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="col-md-12 mb-4">
+
+                            <div class="alert alert-dismissible alert-danger">
+                                <div style="font-size: 14px;">
+                                    <i class="fa fa-minus-circle"></i> This invoice has been failed.<br>
+                                </div>
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-8">
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            Amount:<br>
+                                            <div class="row">
+                                                &nbsp;&nbsp;&nbsp;
+                                                <div class="cryptoamount">
+                                                    1   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                                </div><span style="padding-top: 5px;">LTC</span>
+                                            </div><br>
+                                        </div>
+                                    </div>
+
+                                    No tokens was credited:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <div class="cryptoamount">
+                                            0   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                        </div><span style="padding-top: 5px;">PRU</span>
+                                    </div><br>
+
+                                    Deposited address:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;<div class="cryptoline">
+                                        <div id="btc_wallet">0x215c368d3adc4af81e60b26907d8a0fdea5bbafc</div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div id="bitcoin_qr" title="Scan the QR">
+                                        <img src="./imgs/fail.png" alt="ok">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            Transaction:<br>
+                            <span style="color:#de5858;">Not found</span>
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---ETH-invoice-is-fail---->
+
+        <!---BTC---->
+        <div class="modal fade" id="modal-btc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document" style="margin-top: 200px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="./imgs/btc.png" height="30" width="30"  style="padding-top: -15px;" alt="btc"><h5 class="modal-title">&nbsp;&nbsp;<strong>Buy PRU tokens via BTC</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="col-md-12 mb-4">
+
+                            <div class="alert alert-dismissible alert-primary">
+                                <div style="font-size: 14px;">
+                                    To participate in the token offering, you should simply send BTC to the offering address<br>
+                                </div>
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-8">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Amount to send:<br>
+                                            <div class="row">
+                                                &nbsp;&nbsp;&nbsp;
+                                                <div class="cryptoamount">
+                                                1
+                                                </div><span style="padding-top: 5px;">BTC</span>
+                                            </div><br>
+                                        </div>
+
+                                        <div class="col-md-6" style="color:#6d6d6d;">
+                                            You will recieve:<br>
+                                            <div class="row">
+                                                &nbsp;&nbsp;&nbsp;
+                                                    <strong style="color:#179726;">149,900&nbsp;</strong> <b>PRU&nbsp;</b> tokens
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    Transaction fee:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <div class="cryptoamount">
+                                            0.000943
+                                        </div><span style="padding-top: 5px;">BTC</span>
+                                    </div><br>
+
+                                    Your deposit address:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;<div class="cryptoline">
+                                        <div id="btc_wallet">1C29gpF5MkEPrECiGtkVXwWdAmNiQ4PBMH</div>
+                                    </div>
+                                        <button type="button" onclick="copyToClipboard('btc_wallet')" class="btn btn-primary btn-sm">Copy address</button>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    Your personal deposit address in QR:<br>
+                                    <div id="bitcoin_qr" title="Scan the QR">
+                                        <img src="https://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=|1&chl=http%3A%2F%2Fwww.renanpupin.com">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br>
+                            <div class="alert alert-dismissible alert-secondary"  style="font-size:12px;">
+                                • Please do not send transactions directly from any exchangers like Poloniex or Coinbase!<br>
+                                • If you have already sent Bitcoins to the address above, please wait <span class="nowrap">1-2 min</span> to receive them by it's blockchain.<br>
+                                • Deposit will be creadited after 1 network confirmation.<br>
+                                • Minimum deposit is 0.01 BTC.<br>
+                                • To check transaction status your can use http://etherscan.io website.<br>
+                                • Your wallet must support ERC-20 to recieve PRU tokens. (We recommend MyEtherWallet or MetaMask).
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="progress" style="height: 2px">
+                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="col-md-2 mb-4">
+                        <i class="fa fa-clock"></i> 15:00
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+          </div>
+        <!---BTC---->
+
+        <!---DASH---->
+        <div class="modal fade" id="modal-dash" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document" style="margin-top: 200px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="./imgs/dash.png" height="30" width="30"  style="padding-top: -15px;" alt="eth"><h5 class="modal-title">&nbsp;&nbsp;<strong>Buy PRU tokens via DASH</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="col-md-12 mb-4">
+
+                            <div class="alert alert-dismissible alert-primary">
+                                <div style="font-size: 14px;">
+                                    To participate in the token offering, you should simply send DASH to the offering address<br>
+                                </div>
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-8">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Amount to send:<br>
+                                            <div class="row">
+                                                &nbsp;&nbsp;&nbsp;
+                                                <div class="cryptoamount">
+                                                    1   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                                </div><span style="padding-top: 5px;">DASH</span>
+                                            </div><br>
+                                        </div>
+
+                                        <div class="col-md-6" style="color:#6d6d6d;">
+                                            You will recieve:<br>
+                                            <div class="row">
+                                                &nbsp;&nbsp;&nbsp;
+                                                <strong style="color:#179726;">19,400&nbsp;</strong> <b>PRU&nbsp;</b> tokens
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    Transaction fee:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <div class="cryptoamount">
+                                            0.00943   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                        </div><span style="padding-top: 5px;">DASH</span>
+                                    </div><br>
+
+                                    Your personal deposit address:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;<div class="cryptoline">
+                                        <div id="btc_wallet">XogXAR2yPCyLohrEGZDvLASrNagnZv3aFN</div>
+                                    </div>
+                                        <button type="button" onclick="copyToClipboard('btc_wallet')" class="btn btn-primary btn-sm">Copy address</button>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    Your deposit address in QR:<br>
+                                    <div id="bitcoin_qr" title="Scan the QR">
+                                        <img src="https://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=|1&chl=http%3A%2F%2Fwww.renanpupin.com">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br>
+                            <div class="alert alert-dismissible alert-secondary"  style="font-size:12px;">
+                                • Please do not send transactions directly from any exchangers like Poloniex or Coinbase!<br>
+                                • If you have already sent DASH to the address above, please wait <span class="nowrap">1-2 min</span> to receive them by it's blockchain.<br>
+                                • Deposit will be creadited after 1 network confirmation.<br>
+                                • Minimum deposit is 1 DASH.<br>
+                                • To check transaction status your can use http://etherscan.io website.<br>
+                                • Your wallet must support ERC-20 to recieve PRU tokens. (We recommend MyEtherWallet or MetaMask).
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="progress" style="height: 2px">
+                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="col-md-2 mb-4">
+                        <i class="fa fa-clock"></i> 15:00
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---DASH---->
+
+        <!---LTC---->
+        <div class="modal fade" id="modal-ltc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document" style="margin-top: 200px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="./imgs/ltc.png" height="30" width="30"  style="padding-top: -15px;" alt="ltc"><h5 class="modal-title">&nbsp;&nbsp;<strong>Buy PRU tokens via LTC</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="col-md-12 mb-4">
+
+                            <div class="alert alert-dismissible alert-primary">
+                                <div style="font-size: 14px;">
+                                    To participate in the token offering, you should simply send LTC to the offering address<br>
+                                </div>
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-8">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Amount to send:<br>
+                                            <div class="row">
+                                                &nbsp;&nbsp;&nbsp;
+                                                <div class="cryptoamount">
+                                                    1   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                                </div><span style="padding-top: 5px;">LTC</span>
+                                            </div><br>
+                                        </div>
+
+                                        <div class="col-md-6" style="color:#6d6d6d;">
+                                            You will recieve:<br>
+                                            <div class="row">
+                                                &nbsp;&nbsp;&nbsp;
+                                                <strong style="color:#179726;">9,400&nbsp;</strong> <b>PRU&nbsp;</b> tokens
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    Transaction fee:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <div class="cryptoamount">
+                                            0.00943   <!-- тут та сумма, которую укажет пользователь в инпуте -->
+                                        </div><span style="padding-top: 5px;">LTC</span>
+                                    </div><br>
+
+                                    Your deposit address:<br>
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;<div class="cryptoline">
+                                        <div id="btc_wallet">LVeiMsSsfhpmEYJNYpDzxgpAi9z9bjaAkT</div>
+                                    </div>
+                                        <button type="button" onclick="copyToClipboard('btc_wallet')" class="btn btn-primary btn-sm">Copy address</button>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    Your personal deposit address in QR:<br>
+                                    <div id="bitcoin_qr" title="Scan the QR">
+                                        <img src="https://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=|1&chl=http%3A%2F%2Fwww.renanpupin.com">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br>
+                            <div class="alert alert-dismissible alert-secondary"  style="font-size:12px;">
+                                • Please do not send transactions directly from any exchangers like Poloniex or Coinbase!<br>
+                                • If you have already sent DASH to the address above, please wait <span class="nowrap">1-2 min</span> to receive them by it's blockchain.<br>
+                                • Deposit will be creadited after 1 network confirmation.<br>
+                                • Minimum deposit is 1 DASH.<br>
+                                • To check transaction status your can use http://etherscan.io website.<br>
+                                • Your wallet must support ERC-20 to recieve PRU tokens. (We recommend MyEtherWallet or MetaMask).
+
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="progress" style="height: 2px">
+                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="col-md-2 mb-4">
+                        <i class="fa fa-clock"></i> 15:00
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---LTC---->
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <h2 style="padding-left:15px;"><Strong>Backer's Token sale Panel</Strong></h2>
+
+
+                    <div class="col-md-12">
+                        <div class="alert alert-primary">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    Your assotiated ETH wallet is: <a href="etherscan.io/address/0xbf29685856fae1e228878dfb35b280c0adcc3b05" style="color: #ffffff;"><strong>0x215c368d3adc4af81e60b26907d8a0fdea5bbafc</strong></a><a href="#" class="btn"><i style="color: #ffffff;" class="fa fa-pencil-alt"></i></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <div style="text-align:right;">Your balance: <strong>34,200 PRU</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="col-md-12">-->
+                        <!--<div class="alert alert-dismissible alert-primary">-->
+                            <!--The Token Sale will start on April, 15-->
+
+                            <!--<button type="button" class="close" data-dismiss="alert" aria-label="Close">-->
+                                <!--<span aria-hidden="true">&times;</span>-->
+                            <!--</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <!--<div class="col-md-12">-->
+                        <!--<div class="boxcontainer">-->
+                            <!--<div class="title">Time before Token sale will be started:</div>-->
+                            <!--<div class="box effect2">-->
+                                <!--<div class="days clock-val">29</div>-->
+                                <!--<div class="textbox">&nbsp;Days&nbsp;&nbsp;&nbsp;</div>-->
+                            <!--</div>-->
+                            <!--<div class="box effect2">-->
+                                <!--<div class="hours clock-val">23</div>-->
+                                <!--<div class="textbox">&nbsp;Hours&nbsp;&nbsp;&nbsp;</div>-->
+                            <!--</div>-->
+                            <!--<div class="box effect2">-->
+                                <!--<div class="minutes clock-val ">59</div>-->
+                                <!--<div class="textbox">Minutes</div>-->
+                            <!--</div>-->
+                            <!--<div class="box effect2">-->
+                                <!--<div class="seconds clock-val">04</div>-->
+                                <!--<div class="textbox">Seconds</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+
+                    <div class="col-md-3">
+                        <div class="card p-4" style="height: 120px;">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 d-block font-weight-normal mb-2">145 <b>฿</b></span>
+                                    <span class="font-weight-light">Total BTC collected</span>
+                                </div>
+
+                                <div class="h2 text-muted">
+                                    <img src="./imgs/btc.png" alt="logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card p-4" style="height: 120px;">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 d-block font-weight-normal mb-2">3,900 <b>ETH</b></span>
+                                    <span class="font-weight-light">Total ETH collected</span>
+                                </div>
+
+                                <div class="h2 text-muted">
+                                    <img src="./imgs/eth.png" alt="logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card p-4" style="height: 120px;">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 d-block font-weight-normal mb-2">$4,392,400</span>
+                                    <span class="font-weight-money">Total $ collected in BTC + ETH</span>
+                                </div>
+
+                                <div class="h2 text-muted">
+                                    <img src="./imgs/usd.png" height="64" width="64" alt="logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card p-4" style="height: 120px;">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 d-block font-weight-normal mb-2">4,390</span>
+                                    <span class="font-weight-light">Total backers</span>
+                                </div>
+
+                                <div class="h2 text-muted">
+                                    <img src="./imgs/backers.png" height="64" width="64" alt="logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body p-4" style="height: 140px;">
+                                <div class="text-center">
+                                    <span class="h4 d-block font-weight-normal mb-2">15000 <b>ETH</b></span>
+                                    <span class="font-weight-light">Soft Cap</span>
+                                </div>
+
+                                <div class="mt-4">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 35%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">35%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body p-4" style="height: 140px;">
+                                <div class="text-center">
+                                    <span class="h4 d-block font-weight-normal mb-2">125000 <b>ETH</b></span>
+                                    <span class="font-weight-light">Hard Cap</span>
+                                </div>
+
+                                <div class="mt-4">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 14%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">14%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body p-4" style="height: 140px;">
+                                <div class="text-center">
+                                    <span class="h4 d-block font-weight-normal mb-2">Pre Sale</span>
+                                    <span class="font-weight-light">Token sale status</span>
+                                </div>
+
+                                <div class="mt-4">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div style="padding-bottom: 30px; padding-left: 150px;">
+                        <div class="sprice">
+                            <div class="sprice-title g-grey">
+                                Participate with Ethereum
+                            </div><!-- sprice -->
+                            <div class="sprice-circle s-grey">
+                                <img src="./imgs/eth.png" alt="eth">
+                            </div>
+                            <div class="sprice-cat"><b>19,990</b> PRU / <b>1</b> ETH</div>
+                            <div class="sprice-cat">
+
+                                <div class="row" style="padding-left: 17px; padding-top: 10px;">
+                                    <div class="col-md-5">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><img src="./imgs/eth.png" height="16" width="16" alt="eth"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="1" aria-describedby="sizing-addon3">
+                                        </div>
+                                    </div> <span class="" style="font-size:12px; padding-top: 5px;">=</span>
+                                    <div class="col-md-6">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><img src="./imgs/pru.png" height="16" width="16" alt="pru"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="19990" aria-describedby="sizing-addon3">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="sprice-cat end">Minimal: 0.5 ETH</div>
+                            <div><input type="button" data-toggle="modal" data-target="#modal-eth" value="Get ETH address" class="sprice-button b-grey"></div>
+                        </div><!-- sprice -->
+
+                        <div class="sprice">
+                            <div class="sprice-title g-orange">
+                                Participate with Bitcoin
+                            </div><!-- sprice -->
+                            <div class="sprice-circle s-orange">
+                                <img src="./imgs/btc.png" alt="btc">
+                            </div>
+                            <div class="sprice-cat"><b>149,990</b> PRU / <b>1</b> BTC</div>
+                            <div class="sprice-cat">
+
+                                <div class="row" style="padding-left: 17px; padding-top: 10px;">
+                                    <div class="col-md-5">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><img src="./imgs/btc.png" height="16" width="16" alt="btc"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="1" aria-describedby="sizing-addon3">
+                                        </div>
+                                    </div> <span class="" style="font-size:12px; padding-top: 5px;">=</span>
+                                    <div class="col-md-6">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><img src="./imgs/pru.png" height="16" width="16" alt="pru"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="12990" aria-describedby="sizing-addon3">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="sprice-cat end">Minimal: 0.01 BTC</div>
+                            <div><input type="button" data-toggle="modal" data-target="#modal-btc" value="Get BTC address" class="sprice-button b-orange">        </div>
+                        </div><!-- sprice -->
+
+                        <div class="sprice">
+                            <div class="sprice-title g-blue">
+                                Participate with DASH
+                            </div><!-- sprice -->
+                            <div class="sprice-circle s-blue">
+                                <img src="./imgs/dash.png" alt="dash">
+                            </div>
+                            <div class="sprice-cat"><b>16,990</b> PRU / <b>1</b> DASH</div>
+                            <div class="sprice-cat">
+
+                                <div class="row" style="padding-left: 17px; padding-top: 10px;">
+                                    <div class="col-md-5">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><img src="./imgs/dash.png" height="16" width="16" alt="dash"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="1" aria-describedby="sizing-addon3">
+                                        </div>
+                                    </div> <span class="" style="font-size:12px; padding-top: 5px;">=</span>
+                                    <div class="col-md-6">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><img src="./imgs/pru.png" height="16" width="16" alt="pru"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="12990" aria-describedby="sizing-addon3">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="sprice-cat end">Minimal: 1 DASH</div>
+                            <div><input type="button" data-toggle="modal" data-target="#modal-dash" value="Get DASH address" class="sprice-button b-blue"></div>
+                        </div><!-- sprice -->
+
+                        <div class="sprice">
+                            <div class="sprice-title g-green">
+                                Participate with Litecoin
+                            </div><!-- sprice -->
+                            <div class="sprice-circle s-green">
+                                <img src="./imgs/ltc.png" alt="ltc">
+                            </div>
+                            <div class="sprice-cat"><b>12,990</b> PRU / <b>1</b> LTC</div>
+                            <div class="sprice-cat">
+
+                                <div class="row" style="padding-left: 17px; padding-top: 10px;">
+                                    <div class="col-md-5">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><img src="./imgs/ltc.png" height="16" width="16" alt="ltc"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="1" aria-describedby="sizing-addon3">
+                                        </div>
+                                    </div> <span class="" style="font-size:12px; padding-top: 5px;">=</span>
+                                    <div class="col-md-6">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><img src="./imgs/pru.png" height="16" width="16" alt="pru"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="12990" aria-describedby="sizing-addon3">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="sprice-cat end">Minimal: 1 LTC</div>
+                            <div><input type="button" data-toggle="modal" data-target="#modal-ltc"  value="Get LTC address" class="sprice-button b-green"></div>
+                        </div><!-- sprice -->
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="row ">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Total Users
+                            </div>
+
+                            <div class="card-body p-0">
+                                <div class="p-4">
+                                    <canvas id="line-chart" width="100%" height="20"></canvas>
+                                </div>
+
+                                <div class="justify-content-around mt-4 p-4 bg-light d-flex border-top d-md-down-none">
+                                    <div class="text-center">
+                                        <div class="text-muted small">Total ETH Transactions</div>
+                                        <div>12,457 (9%)</div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <div class="text-muted small">Total BTC Transactions</div>
+                                        <div>95,333 Users (91%)</div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <div class="text-muted small">Total Transactions</div>
+                                        <div>103,565 Files (100%)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row ">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body p-5">
+                                <div class="text-center">
+                                    <span class="h4 d-block font-weight-normal mb-2">1,000,000,000 <b>PRU</b></span>
+                                    <span class="font-weight-light">Total tokens amount suply</span>
+                                </div>
+
+                                <div class="mt-4">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body p-5">
+                                <div class="text-center">
+                                    <span class="h4 d-block font-weight-normal mb-2">389,000,000 <b>PRU</b></span>
+                                    <span class="font-weight-light">Tokens already sold</span>
+                                </div>
+
+                                <div class="mt-4">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 24%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">24%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body p-5">
+                                <div class="text-center">
+                                    <span class="h4 d-block font-weight-normal mb-2">580,000,000 <b>PRU</b></span>
+                                    <span class="font-weight-light">Token available for purchase</span>
+                                </div>
+
+                                <div class="mt-4">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">65%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 mb-4">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#home4" role="tab" aria-controls="home" aria-expanded="false"><i class="icon icon-btc">฿</i> BTC Transactions &nbsp;<span class="badge badge-success">18</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#profile4" role="tab" aria-controls="profile" aria-expanded="true"><i class="icon-eth">E</i> ETH Transactions &nbsp;<span class="badge badge-pill badge-success">119</span></a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane" id="home4" role="tabpanel" aria-expanded="false">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <div class="wrapper wrapper-content animated fadeInUp">
+
+                                        <div class="card-header bg-light">
+                                            <div class="ibox-title">
+                                                <h5>Last 20 BTC transaction</h5>
+                                                <div class="ibox-tools">
+
+                                                </div>
+                                            </div>
+                                            <div class="ibox-content">
+                                                <div class="row m-b-sm m-t-sm">
+                                                    <div class="col-md-1">
+                                                        <button class="btn btn-primary"><i class="fa fa-refresh"></i> Refresh</button>
+                                                    </div>
+                                                    <div class="col-md-11">
+                                                        <div class="input-group">
+                                                            <input type="text" name="input1-group2" class="form-control" placeholder="Transaction">
+                                                            <span class="input-group-btn">
+                                                                <button type="button" class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div><br>
+
+                                                <div class="project-list">
+
+                                                    <table class="table table-hover">
+                                                        <tbody>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x5b6a6ed1027df283faa18603bd2095c7455f488fe8ad4b53858c56daeec2ec77"><strong>Tx:</strong>0x5b6a6ed1027df283faa18603bd2095c7455f488fe8ad4b53858c56daeec2ec77</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0xfd8c7c0d13d8c78bdfbc5dce69d4fae40a3abab4   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-20 14:03:12</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-pill badge-danger">Fail</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0xffe355d7b8ba8fec51741614f176b122ed2f6741f290f09dab93fb70e02139b2"><strong>Tx:</strong>0xffe355d7b8ba8fec51741614f176b122ed2f6741f290f09dab93fb70e02139b2</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-17 19:01:27</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 0.0 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x8be432534ace62d5882378a29ef2c158eea335ca9e44d23a3ce05636f7b21ddb"><strong>Tx:</strong>0x8be432534ace62d5882378a29ef2c158eea335ca9e44d23a3ce05636f7b21ddb</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0xa67a962f2e8bf4940e573fb0f76235c59dad0e44   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-17 18:23:57</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-pill badge-danger">Fail</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x231ec1cd664c2eaa1bc7444d1b28d2791b63fa304c2b8ab659cd106c5a5d24cd"><strong>Tx:</strong>0x231ec1cd664c2eaa1bc7444d1b28d2791b63fa304c2b8ab659cd106c5a5d24cd</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0xa67a962f2e8bf4940e573fb0f76235c59dad0e44   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-17 18:18:42</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-pill badge-danger">Fail</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x9b298058e0c59ab9bb3899aaab4c948d25fc04509aaf4f7f8126977798759c1d"><strong>Tx:</strong>0x9b298058e0c59ab9bb3899aaab4c948d25fc04509aaf4f7f8126977798759c1d</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x442b67fe375a43c2d9126b9c7c2938e072cf871e   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-17 18:16:42</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-pill badge-danger">Fail</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0xf0d4731389ba3a5ea85ced43946d451d743135b6e50c01e4e027b596fb5ac940"><strong>Tx:</strong>0xf0d4731389ba3a5ea85ced43946d451d743135b6e50c01e4e027b596fb5ac940</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x442b67fe375a43c2d9126b9c7c2938e072cf871e   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-17 18:11:57</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-pill badge-danger">Fail</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x84244a8ed6198e8309a5a01968aac3ccbdb4a1e275bf7f0ce06b186b637ad84c"><strong>Tx:</strong>0x84244a8ed6198e8309a5a01968aac3ccbdb4a1e275bf7f0ce06b186b637ad84c</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x442b67fe375a43c2d9126b9c7c2938e072cf871e   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-17 18:06:42</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-pill badge-danger">Fail</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0xe60e41f5d0fbe50b685e07478b5bb29ac873a3b52d1328dc97d863829c7ab7ad"><strong>Tx:</strong>0xe60e41f5d0fbe50b685e07478b5bb29ac873a3b52d1328dc97d863829c7ab7ad</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-17 18:05:42</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x46d92632d49a8bef1edc17808b824da84ce9b75067f919439cee7d5031bf5db9"><strong>Tx:</strong>0x46d92632d49a8bef1edc17808b824da84ce9b75067f919439cee7d5031bf5db9</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x442b67fe375a43c2d9126b9c7c2938e072cf871e   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-17 18:02:12</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-pill badge-danger">Fail</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x3fd7b17b4e6a7cf9b821469208a725a107dbd2d4383ce8ae3fa12d6ca08b335e"><strong>Tx:</strong>0x3fd7b17b4e6a7cf9b821469208a725a107dbd2d4383ce8ae3fa12d6ca08b335e</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-16 05:53:27</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 0.0 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0xa5c289dabe4ebc78c2672e8ca6e659e7db257fc2fdd067cd1124e06d8366a096"><strong>Tx:</strong>0xa5c289dabe4ebc78c2672e8ca6e659e7db257fc2fdd067cd1124e06d8366a096</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-16 05:52:12</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 0.0 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0xb3951da981fdee9d69ac77e90e23fbb1c40f2b45690ac7d51428ce3623c8a1a1"><strong>Tx:</strong>0xb3951da981fdee9d69ac77e90e23fbb1c40f2b45690ac7d51428ce3623c8a1a1</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-16 05:47:27</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x0e3ce862cebbf681a104f2d8f6cf4047d0f0b47bd108bccc17fbadf9c6a41310"><strong>Tx:</strong>0x0e3ce862cebbf681a104f2d8f6cf4047d0f0b47bd108bccc17fbadf9c6a41310</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-16 05:44:42</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x35aa901321f7a5115b8d8dc54df095a81fc427f55002fac1f0db2a16e827152c"><strong>Tx:</strong>0x35aa901321f7a5115b8d8dc54df095a81fc427f55002fac1f0db2a16e827152c</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-15 23:18:27</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 0.0 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x71fdebf94a58b0ad075e1bbb57b357cb178cd1cc0f2f05df92a9642c4c1ce8c9"><strong>Tx:</strong>0x71fdebf94a58b0ad075e1bbb57b357cb178cd1cc0f2f05df92a9642c4c1ce8c9</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-15 23:17:42</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x89087c2742e5af9097e1e692ac0ee03cc248c3b45cdc1b072911df25db46d1f5"><strong>Tx:</strong>0x89087c2742e5af9097e1e692ac0ee03cc248c3b45cdc1b072911df25db46d1f5</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-15 23:09:27</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x1150ed90ead1ce864bc2f8c080eeab5ce1f5d4607af77f71d410f402072f7226"><strong>Tx:</strong>0x1150ed90ead1ce864bc2f8c080eeab5ce1f5d4607af77f71d410f402072f7226</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong><br>
+                                                                <small>2018-01-15 23:06:27</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 0.0 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="tab-pane active" id="profile4" role="tabpanel" aria-expanded="true">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <div class="wrapper wrapper-content animated fadeInUp">
+
+                                        <div class="card-header bg-light">
+                                            <div class="ibox-title">
+                                                <h5>Last 20 ETH transaction</h5>
+                                                <div class="ibox-tools">
+
+                                                </div>
+                                            </div>
+                                            <div class="ibox-content">
+                                                <div class="row m-b-sm m-t-sm">
+                                                    <div class="col-md-1">
+                                                        <button class="btn btn-primary"><i class="fa fa-refresh"></i> Refresh</button>
+                                                    </div>
+                                                    <div class="col-md-11">
+                                                        <div class="input-group">
+                                                             <input type="text" id="input-group-1" name="input1-group2" class="form-control" placeholder="Transaction">
+                                                            <span class="input-group-btn">
+                                                                <button type="button" class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div><br>
+
+                                                <div class="project-list">
+
+                                                    <table class="table table-hover">
+                                                        <tbody>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x5b6a6ed1027df283faa18603bd2095c7455f488fe8ad4b53858c56daeec2ec77"><strong>Tx:</strong>0x5b6a6ed1027df283faa18603bd2095c7455f488fe8ad4b53858c56daeec2ec77</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0xfd8c7c0d13d8c78bdfbc5dce69d4fae40a3abab4   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-20 14:03:12</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-pill badge-danger">Fail</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 35%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0xffe355d7b8ba8fec51741614f176b122ed2f6741f290f09dab93fb70e02139b2"><strong>Tx:</strong>0xffe355d7b8ba8fec51741614f176b122ed2f6741f290f09dab93fb70e02139b2</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-17 19:01:27</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 0.0 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 35%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x8be432534ace62d5882378a29ef2c158eea335ca9e44d23a3ce05636f7b21ddb"><strong>Tx:</strong>0x8be432534ace62d5882378a29ef2c158eea335ca9e44d23a3ce05636f7b21ddb</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0xa67a962f2e8bf4940e573fb0f76235c59dad0e44   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-17 18:23:57</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-pill badge-danger">Fail</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 35%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="30"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x231ec1cd664c2eaa1bc7444d1b28d2791b63fa304c2b8ab659cd106c5a5d24cd"><strong>Tx:</strong>0x231ec1cd664c2eaa1bc7444d1b28d2791b63fa304c2b8ab659cd106c5a5d24cd</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0xa67a962f2e8bf4940e573fb0f76235c59dad0e44   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-17 18:18:42</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-pill badge-danger">Fail</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 15%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x9b298058e0c59ab9bb3899aaab4c948d25fc04509aaf4f7f8126977798759c1d"><strong>Tx:</strong>0x9b298058e0c59ab9bb3899aaab4c948d25fc04509aaf4f7f8126977798759c1d</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x442b67fe375a43c2d9126b9c7c2938e072cf871e   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-17 18:16:42</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-pill badge-danger">Fail</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 15%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0xf0d4731389ba3a5ea85ced43946d451d743135b6e50c01e4e027b596fb5ac940"><strong>Tx:</strong>0xf0d4731389ba3a5ea85ced43946d451d743135b6e50c01e4e027b596fb5ac940</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x442b67fe375a43c2d9126b9c7c2938e072cf871e   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-17 18:11:57</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-pill badge-danger">Fail</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 15%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x84244a8ed6198e8309a5a01968aac3ccbdb4a1e275bf7f0ce06b186b637ad84c"><strong>Tx:</strong>0x84244a8ed6198e8309a5a01968aac3ccbdb4a1e275bf7f0ce06b186b637ad84c</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x442b67fe375a43c2d9126b9c7c2938e072cf871e   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-17 18:06:42</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-pill badge-danger">Fail</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 15%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0xe60e41f5d0fbe50b685e07478b5bb29ac873a3b52d1328dc97d863829c7ab7ad"><strong>Tx:</strong>0xe60e41f5d0fbe50b685e07478b5bb29ac873a3b52d1328dc97d863829c7ab7ad</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-17 18:05:42</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x46d92632d49a8bef1edc17808b824da84ce9b75067f919439cee7d5031bf5db9"><strong>Tx:</strong>0x46d92632d49a8bef1edc17808b824da84ce9b75067f919439cee7d5031bf5db9</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x442b67fe375a43c2d9126b9c7c2938e072cf871e   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-17 18:02:12</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-pill badge-danger">Fail</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x3fd7b17b4e6a7cf9b821469208a725a107dbd2d4383ce8ae3fa12d6ca08b335e"><strong>Tx:</strong>0x3fd7b17b4e6a7cf9b821469208a725a107dbd2d4383ce8ae3fa12d6ca08b335e</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-16 05:53:27</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 0.0 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0xa5c289dabe4ebc78c2672e8ca6e659e7db257fc2fdd067cd1124e06d8366a096"><strong>Tx:</strong>0xa5c289dabe4ebc78c2672e8ca6e659e7db257fc2fdd067cd1124e06d8366a096</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-16 05:52:12</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 0.0 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0xb3951da981fdee9d69ac77e90e23fbb1c40f2b45690ac7d51428ce3623c8a1a1"><strong>Tx:</strong>0xb3951da981fdee9d69ac77e90e23fbb1c40f2b45690ac7d51428ce3623c8a1a1</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-16 05:47:27</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x0e3ce862cebbf681a104f2d8f6cf4047d0f0b47bd108bccc17fbadf9c6a41310"><strong>Tx:</strong>0x0e3ce862cebbf681a104f2d8f6cf4047d0f0b47bd108bccc17fbadf9c6a41310</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-16 05:44:42</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x35aa901321f7a5115b8d8dc54df095a81fc427f55002fac1f0db2a16e827152c"><strong>Tx:</strong>0x35aa901321f7a5115b8d8dc54df095a81fc427f55002fac1f0db2a16e827152c</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-15 23:18:27</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 0.0 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x71fdebf94a58b0ad075e1bbb57b357cb178cd1cc0f2f05df92a9642c4c1ce8c9"><strong>Tx:</strong>0x71fdebf94a58b0ad075e1bbb57b357cb178cd1cc0f2f05df92a9642c4c1ce8c9</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-15 23:17:42</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x89087c2742e5af9097e1e692ac0ee03cc248c3b45cdc1b072911df25db46d1f5"><strong>Tx:</strong>0x89087c2742e5af9097e1e692ac0ee03cc248c3b45cdc1b072911df25db46d1f5</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong>0xd3d5c0d66847b83505110fa8d36bb317abbf1be1<br>
+                                                                <small>2018-01-15 23:09:27</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 2.147483647e-09 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="project-title">
+                                                                <a href="http://rinkeby.etherscan.io/tx/0x1150ed90ead1ce864bc2f8c080eeab5ce1f5d4607af77f71d410f402072f7226"><strong>Tx:</strong>0x1150ed90ead1ce864bc2f8c080eeab5ce1f5d4607af77f71d410f402072f7226</a>
+                                                                <br>
+                                                                <strong>From:</strong> 0x30e0644bcc1c6d73d967887f76c4f2ab98e1f9af   <strong>To: </strong><br>
+                                                                <small>2018-01-15 23:06:27</small>
+                                                            </td>
+                                                            <td><strong>Amount:</strong> 0.0 ETH<br></td>
+                                                            <td class="project-status">
+                                                                <span class="badge badge-success">Success</span>
+                                                            </td>
+                                                            <td class="project-completion">
+                                                                <small>Completion with:100 %</small>
+                                                                <div class="progress progress-mini">
+                                                                    <div style="width: 100%;" class="progress-bar"></div>
+                                                                </div>
+                                                            </td>
+
+
+
+                                                        </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./vendor/jquery/jquery.min.js"></script>
+<script src="./vendor/popper.js/popper.min.js"></script>
+<script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="./vendor/chart.js/chart.min.js"></script>
+<script src="./js/carbon.js"></script>
+<script src="./js/demo.js"></script>
+</body>
+</html>

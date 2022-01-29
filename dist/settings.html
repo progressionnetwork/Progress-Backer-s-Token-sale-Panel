@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carbon - Admin Template</title>
+    <link rel="stylesheet" href="./vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="./vendor/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="sidebar-fixed header-fixed">
+<div class="page-wrapper">
+    <nav class="navbar page-header">
+        <a href="#" class="btn btn-link sidebar-mobile-toggle d-md-none mr-auto">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <a class="navbar-brand" href="#">
+            <img src="./imgs/logo.png" alt="logo">
+        </a>
+
+        <a href="#" class="btn btn-link sidebar-toggle d-md-down-none">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item d-md-down-none">
+                <a href="#">
+                    <button type="button" data-toggle="modal" data-target="#modal-2" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> &nbsp; Buy tokens </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
+            </li>
+
+            <li class="nav-item d-md-down-none">
+                <a href="#">
+                    <i class="fa fa-bell"></i>
+                    <span class="badge badge-pill badge-danger">5</span>
+                </a>
+            </li>
+
+            <li class="nav-item d-md-down-none">
+                <a href="#">
+                    <i class="fa fa-envelope-open"></i>
+                    <span class="badge badge-pill badge-danger">5</span>
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="./imgs/avatar-1.png" class="avatar avatar-sm" alt="logo">
+                    <span class="small ml-1 d-md-down-none">Username</span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-header">Account</div>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-user"></i> Profile
+                    </a>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-envelope"></i> Messages
+                    </a>
+
+                    <div class="dropdown-header">Settings</div>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-bell"></i> Notifications
+                    </a>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-wrench"></i> Settings
+                    </a>
+
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-lock"></i> Logout
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+
+            <div class="sidebar">
+                <nav class="sidebar-nav">
+                    <ul class="nav">
+                        <li class="nav-title">Navigation</li>
+
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">
+                                <i class="fa fa-search"></i> Dashboard
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="history.html" class="nav-link">
+                                <i class="fa fa-history"></i> History
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="settings.html" class="nav-link">
+                                <i class="fa fa-cogs"></i> Settings
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="history.html" class="nav-link">
+                                <i class="fa fa-lock"></i> Logout
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <h2 style="padding-left:15px;"><Strong>Backer's account settings panel</Strong></h2>
+
+                    <div class="col-md-12">
+                        <div class="alert alert-primary">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    Your assotiated ETH wallet is: <a href="etherscan.io/address/0xbf29685856fae1e228878dfb35b280c0adcc3b05" style="color: #ffffff;"><strong>0x215c368d3adc4af81e60b26907d8a0fdea5bbafc</strong></a><a href="#" class="btn"><i style="color: #ffffff;" class="fa fa-pencil-alt"></i></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <div style="text-align:right;">Your balance: <strong>34,200 PRU</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item">Profile</a>
+                            <a href="#" class="list-group-item active">Account Settings</a>
+                            <!--<a href="#" class="list-group-item">Notifications</a>-->
+                            <!--<a href="#" class="list-group-item">Subscription</a>-->
+                        </div>
+                    </div>
+
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                Account Settings
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row mb-5">
+                                    <div class="col-md-4 mb-4">
+                                        <div>Profile Information</div>
+                                        <div class="text-muted small">These information are not visible to the public.</div>
+                                    </div>
+
+                                    <div class="col-md-8">
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Email Address</label>
+                                                    <input class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Your ETH Wallet to receive WELL tokens:</label>
+                                                    <input class="form-control" placeholder="0x215c368d3adc4af81e60b26907d8a0fdea5bbafc">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="row mt-5">
+                                    <div class="col-md-4 mb-4">
+                                        <div>Access Credentials</div>
+                                        <div class="text-muted small">Leave credentials fields empty if you don't wish to change the password.</div>
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Password</label>
+                                                    <input type="password" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Password Confirmation</label>
+                                                    <input type="password" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-footer bg-light text-right">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </div>
+
+
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                Profile (KYC\AML Form)
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row mb-5">
+                                    <div class="col-md-4 mb-4">
+                                        <div>Here you can change your credentials and check KYC status.</div>
+                                        <div class="text-muted small">These information are not visible to the public.</div>
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">First name</label>
+                                                    <input class="form-control" placeholder="">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Last name</label>
+                                                    <input class="form-control" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Middle Name</label>
+                                                    <input class="form-control" placeholder="">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Birth date</label>
+                                                    <input class="form-control" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Nationality</label>
+                                                    <input class="form-control" placeholder="">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Passport</label>
+                                                    <input class="form-control" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Country</label>
+                                                    <input class="form-control" placeholder="">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">City</label>
+                                                    <input class="form-control" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Address</label>
+                                                    <input class="form-control" placeholder="">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Zip code</label>
+                                                    <input class="form-control" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Phone number</label>
+                                                    <input class="form-control" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="card-footer bg-light text-right">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./vendor/jquery/jquery.min.js"></script>
+<script src="./vendor/popper.js/popper.min.js"></script>
+<script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="./vendor/chart.js/chart.min.js"></script>
+<script src="./js/carbon.js"></script>
+<script src="./js/demo.js"></script>
+</body>
+</html>
